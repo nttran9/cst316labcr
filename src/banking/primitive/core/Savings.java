@@ -3,7 +3,6 @@ package banking.primitive.core;
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int numWithdraws = 0;
-	private final int FREEWITHDRAWSAVINGS = 3;
 
 	public Savings(String name) {
 		super(name);
@@ -34,7 +33,7 @@ public class Savings extends Account {
 		if (getState() == State.OPEN && amount > 0.0f) {
 			balance = balance - amount;
 			numWithdraws++;
-			if (numWithdraws > FREEWITHDRAWSAVINGS)
+			if (numWithdraws > 3)
 				balance = balance - 1.0f;
 			// KG BVA: should be < 0
 			if (balance < 0.0f) {
