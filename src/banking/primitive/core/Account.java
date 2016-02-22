@@ -1,5 +1,14 @@
 package banking.primitive.core;
-
+/**
+ * File: Account.java
+ * 
+ * @author kevinagary
+ * 
+ * Description:
+ * Account. java is in charge of initializing the Account object 
+ * including getter and setter methods along with its functional methods 
+ * 
+ */
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
