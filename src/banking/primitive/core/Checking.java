@@ -4,6 +4,8 @@ public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
 	private int numWithdraws = 0;
+	private final int FREEWITHDRAWCHECKING = 10;
+	
 	
 	private Checking(String name) {
 		super(name);
@@ -42,7 +44,7 @@ public class Checking extends Account {
 			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
 				numWithdraws++;
-				if (numWithdraws > 10)
+				if (numWithdraws > FREEWITHDRAWCHECKING)
 					balance = balance - 2.0f;
 				if (balance < 0.0f) {
 					setState(State.OVERDRAWN);
