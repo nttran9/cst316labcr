@@ -3,6 +3,9 @@ package banking.primitive.core;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.swing.JOptionPane;
+
 import java.util.HashMap;
 import java.io.*;
 
@@ -71,7 +74,10 @@ class ServerSolution implements AccountServer {
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
-		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
+		if (balance < 0.0f) {
+			JOptionPane.showMessageDialog(null, "New account may not be started with a negative balance");
+			throw new IllegalArgumentException("New account may not be started with a negative balance");
+		}
 		
 		return newAccountFactory(type, name, balance);
 	}
