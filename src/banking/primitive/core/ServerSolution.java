@@ -111,7 +111,7 @@ class ServerSolution implements AccountServer {
 
 			out.writeObject(Integer.valueOf(accountMap.size()));
 			for (int i=0; i < accountMap.size(); i++) {
-				out.writeObject(accountMap.get(i));
+				out.writeObject(accountMap.get(String.valueOf(i)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
